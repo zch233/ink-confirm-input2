@@ -1,0 +1,21 @@
+{
+  "name": "ink-confirm-input2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:zch233/ink-confirm-input2.git",
+  "author": "zhangchao <529743595@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "tsc && node dist/index.js"
+  },
+  "dependencies": {
+    "ink": "3.2.0",
+    "ink-text-input": "4.0.3",
+    "react": "18.2.0",
+    "yn": "5.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "18.0.17",
+    "typescript": "4.7.4"
+  }
+}
