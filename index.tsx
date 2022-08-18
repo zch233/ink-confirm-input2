@@ -1,6 +1,6 @@
-import React, {FC, useCallback} from 'react';
+import React, {FC, useCallback, useState} from 'react';
 import TextInput from 'ink-text-input';
-import yn from "yn";
+import yn from 'yn';
 
 interface Props {
   isChecked?: boolean,
@@ -25,3 +25,18 @@ const ConfirmInput:FC<Props> = ({isChecked=false, onChange=() => {}, onSubmit=()
     />
   );
 };
+
+interface UncontrolledProps extends Omit<Props, 'value' | 'onChange'> {
+  /**
+   * Initial value.
+   */
+  initialValue?: string;
+}
+
+export const UncontrolledConfirmInput: FC<UncontrolledProps> = ({ initialValue = '', ...props }) => {
+  const [value, setValue] = useState(initialValue);
+
+  return <ConfirmInput {...props} value={value} onChange={setValue} />;
+};
+
+export default ConfirmInput
